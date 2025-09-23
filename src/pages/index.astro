@@ -1,16 +1,626 @@
 ---
+import Image from "astro/components/Image.astro"
+import LayoutGeneral from "../layouts/LayoutGeneral.astro"
+import "../styles/global.css"
+import "../styles/home.css"
+import whiteLogo from "../assets/images/logo/touchpoint-marketing-pr-blanco.png"
+import firstImg from "../assets/images/home/esquema-que-representa-conexion.png"
+import profundoEntendimientoImg from "../assets/images/home/profundo-entendimiento-de-la-dinamica-b2b.png"
+import relacionesPublicas from "../assets/images/home/relaciones-publicas-digitales-y-gestion-de-reputacion.png"
+import linea from "../assets/images/home/linea-punteada.png"
+import manInConferency from "../assets/images/home/hombre-en-una-conferencia.png"
+import computadora from "../assets/images/home/computadora-con-graficas-de-analisis.png"
+import relacionesConMedios from "../assets/images/home/icons/relaciones-de-medios-y-cobretura.svg"
+import liderazgoDeOpinion from "../assets/images/home/icons/liderazgo-de-opinion-y-posicionamiento-ejecutivo.svg"
+import relacionespyd from "../assets/images/home/icons/relaciones-publicas-digitales-y-ampliacion-de-contenido.svg"
+import participacion from "../assets/images/home/icons/participacion-en-la-industria-y-construccion-de-relaciones.svg"
+import monitoreo from "../assets/images/home/icons/monitoreo-mitigacion-y-gestion-de-crisis.svg"
+import eventosCorporativos from "../assets/images/home/icons/eventos-corporativos.svg"
+import conferenceSpeaker from "../assets/images/home/hombre-hablando-en-una-conferencia.png"
+import juntaDeNegocios from "../assets/images/home/personas-en-una-junta-de-negocios.png"
+import setDeGrabacion from "../assets/images/home/foto-de-un-set-de-grabación-o-de-fotos.png"
+import investigacion from "../assets/images/home/icons/investigacion-y-analisis-estrategico.svg"
+import marketingDigital from "../assets/images/home/icons/marketing-digital.svg"
+import marketingInbound from "../assets/images/home/icons/marketing-inbound-y-generacion-de-demanda.svg"
+import desarrollo from "../assets/images/home/icons/desarrollo-e-integracion-de-tecnologia.svg"
+import abm from "../assets/images/home/icons/marketing-basado-en-cuentas.svg"
+import automatizacion from "../assets/images/home/icons/automatizacion-del-marketing.svg"
+import serviciosFinancieros from "../assets/images/home/icons/servicios-financieros.svg"
+import tecnologia from "../assets/images/home/icons/tecnologia-software-y-saas.svg"
+import industria from "../assets/images/home/icons/industria-equipamiento-logistica.svg"
+import bienesRaices from "../assets/images/home/icons/bienes-raices-y-proptech.svg"
+import telecomunicaciones from "../assets/images/home/icons/telecomunicaciones.svg"
+import consultoria from "../assets/images/home/icons/consultoria-e-integracion.svg"
+import organizaciones from "../assets/images/home/icons/organizaciones-sin-fines-de-lucro.svg"
+import manos from "../assets/images/home/manos-sosteniendo-iconos.png"
+import holograma from "../assets/images/home/holograma-que-muestra-personas-conectadas.png"
+import reunion from "../assets/images/home/dos-personas-planificando.png"
+import mapa from "../assets/images/home/mapa-en-una-tablet.png"
+
+
+
+import GreenSecCard from "../components/GreenSecCard.astro"
+
+
+
+
+const containerClases ="w-full pt-10 pb-10 lg:pt-20 lg:pb-20 flex justify-center items-end";
+const buttonClases= "lg:px-[48px] lg:py-[15px] bg-redTpm text-white font-bold hover:bg-white hover:border-[2px] hover:border-redTpm hover:text-redTpm px-5 py-3 block ";
+const contentClases= "mw-1200 mx-[20px] px-[15px] lg:grid lg:grid-cols-2 lg:mx-0 lg:px-0 ";
+const contentClasesCol ="mw-1200 mx-[20px] px-[15px] lg:flex lg:flex-col lg:mx-0 lg:px-0 ";
+const titleStyles = "font-bold lg:text-(length:--sec-title-size) text-(length:--sec-title-size-mobile) text-blackTpm"
+const subtitleStyles ="font-medium text-(length:--sec-subtitle-size) uppercase tracking-[3px]"
+const smallTitle = "font-bold lg:text-(length:--box-title-size) text-(length:--sec-title-size-mobile) text-blackTpm"
+const smallText = "text-(length:--box-text-size) font-regular"
+
+const sectorsList = [
+	{
+		sector:"Servicios Financieros y Fintech,\n Wealthtech, Insurtech.",
+		icon:serviciosFinancieros
+	},
+	{
+		sector:"Tecnología, Software y SaaS.",
+		icon:tecnologia
+	},
+	{
+		sector:"Industria, Equipamiento, Logística.",
+		icon:industria
+	},
+	{
+		sector:"Bienes Raíces y PropTech.",
+		icon:bienesRaices
+	},
+	{
+		sector:"Telecomunicaciones.",
+		icon:telecomunicaciones
+	},
+	{
+		sector:"Consultoría e Integración.",
+		icon:consultoria
+	},
+	{
+		sector:"Organizaciones sin fines de lucro.",
+		icon:organizaciones
+	},
+]
+const pinkSectionCards =[
+	{
+		title:"Investigación y Análisis Estratégico",
+		icon: investigacion,
+		listElements:[
+			"Análisis de mercado y competencia.",
+			"Investigación y monitoreo de tendencias.",
+			"Monitoreo de redes sociales y análisis de sentimiento.",
+			"Planificación estratégica y desarrollo de hojas de ruta.",
+		]
+	},
+	{
+		title:"Marketing Digital",
+		icon: marketingDigital,
+		listElements:[
+			"Optimización de sitios y contenidos:  SEO  y GEO   Integración de herramientas para motores de  búsqueda e inteligencia artificial",
+			"Estrategia de Marketing de Contenidos:",
+			"Blogs, white papers, infografías, videos y podcasts.",
+			"Campañas pagadas:  Google, LinkedIn, Meta, Twitter y Tiktok, entre otras",
+		]
+	},
+	{
+		title:"Marketing Inbound y \n Generación de Demanda",
+		icon: marketingInbound,
+		listElements:[
+			"Calificación y Nutrición de Leads: con modelos de puntuación y procesos de SQL (Sales Qualified Leads).",
+			"Optimización del Proceso de Maduración:  Análisis de embudo, tableros de control, lead scoring y conversión.",
+		]
+	},
+	{
+		title:"Desarrollo e Integración \n de Tecnología",
+		icon: desarrollo,
+		listElements:[
+			"Desarrollo de sitios web",
+			"Integración de plataformas y gestión de API.",
+			"Desarrollo de aplicaciones a medida.",
+			"Optimización de procesos.",
+			"Desarrollo de activos digitales: Calculadoras, Simuladores, Comparadores, Gamification",
+		]
+	},
+	{
+		title:"Marketing Basado en \n Cuentas (ABM)",
+		icon: abm,
+		listElements:[
+			"Identificación de Cuentas Objetivo: con desarrollo de ICP (Perfil de Cliente Ideal) y mapeo de tomadores de decisiones.",
+			"Desarrollo de Campañas Personalizadas: con contenido específico para cuentas y campañas a medida.",
+			"Interacción Multicanal con Cuentas: a través de LinkedIn, anuncios dirigidos y programas ejecutivos.",
+			"Medición del Rendimiento de ABM: con puntuación de engagement y seguimiento del ROI.",
+		]
+	},
+	{
+		title:"Automatización del \n Marketing",
+		icon: automatizacion,
+		listElements:[
+			"Gestión y Configuración de Plataformas: para HubSpot, RD Station, Marketo, Eloqua y Salesforce.",
+			"Automatización de Email Marketing: con campañas de goteo (drip campaigns) y disparadores conductuales.",
+			"Programas de Comunicación Multicanal: incluyendo SMS, redes sociales y WhatsApp.",
+			"Análisis y Optimización del Rendimiento: con modelado de atribución y análisis de ROI.",
+		]
+	},
+]
+const greenSectionCards = [
+	{
+		title:"Relaciones con \n Medios y Cobertura",
+		icon: relacionesConMedios,
+		listElements:[
+			"Desarrollo y distribución de comunicados de prensa.",
+			"Entrevistas",
+			"Creación y mantenimiento de kits de prensa.",
+			"Gestión de relaciones con periodistas.",
+			"Planificación y respuesta a crisis de comunicación.",
+			"Desarrollo de calendarios editoriales."
+
+		]
+
+	},
+	{
+		title:"Liderazgo de Opinión y \nPosicionamiento Ejecutivo",
+		icon: liderazgoDeOpinion,
+		listElements:[
+			"Coordinación de entrevistas ejecutivas.",
+			"Identificación y gestión de oportunidades para ponencias, paneles, contribución de contenido",
+			"Nominación y postulación a premios y rankings de la industria.",
+			"Gestión y preparación para participaciones en podcasts.",
+
+		]
+
+	},
+	{
+		title:"Relaciones Públicas Digitales \n y Amplificación de Contenido",
+		icon: relacionespyd,
+		listElements:[
+			"Estrategias de posicionamiento ejecutivo en LinkedIn.",
+			"Distribución de comunicados de prensa optimizados para SEO/GEO.",
+			"Monitoreo y gestión de la reputación online.",
+
+		]
+
+	},
+	{
+		title:"Participación en la Industria y Construcción de Relaciones",
+		icon: participacion,
+		listElements:[
+			"Participación y liderazgo en cámaras de comercio.",
+			"Participación en asociaciones profesionales.",
+			"Ponencias y patrocinios en conferencias de la industria.",
+			"Participación en consejos editoriales de publicaciones especializadas.",
+			"Identificación y desarrollo de relaciones con influencers.",
+
+		]
+
+	},
+	{
+		title:"Monitoreo, mitigación y\n gestión de Crisis",
+		icon: monitoreo,
+		listElements:[
+			"Monitoreo preventivo y creación de escenarios",
+			"Entrenamiento individual y grupa",
+			"Capacitación de vocerosl",
+			"Crisis training tradicional",
+			"Sesiones de simulacros en vivo o online",
+			"Desarrollo de manuales, kits y darksites",
+
+		]
+
+	},
+	{
+		title:"Eventos\n Corporativos",
+		icon: eventosCorporativos,
+		listElements:[
+			"Desde mesas redondas ejecutivas hasta foros y cumbres.",
+			"Participación y moderación en paneles de la industria.",
+			"Gestión integral de eventos presenciales y virtuales.",
+
+		]
+
+	},
+];
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<LayoutGeneral>
+
+	<!-- Header -->
+	<header id="header">
+		<div class="logo">
+			<Image src={whiteLogo} alt="Logo" id="logo"/>
+		</div>
+		<nav>
+			<ul>
+				<a href="#" id="openSeoAuditMenu"><li class="nav">Auditoria WEB</li></a>
+				<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=cta&utm_content=menu_contacto" target="_blank"><li class="contacto-nav">Contacto</li></a>
+			</ul>
+		</nav>
+	</header>
+	
+	<!-- Sección de contenido -->
+	<section id="contenido">
+			<div class="contenido-texto">
+				<h1>Touchpoint</h1>
+				<h2 class="subtitulo">Marketing & PR</h2>
+			</div>
+			<div class="contenido-boton">
+				<p>Generación de prospectos calificados + Relaciones<br>Públicas <strong>para empresas B2B</strong></p>
+				<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" target="_blank"><button>Agenda una llamada</a></button>
+				<!-- CTA secundario debajo de "Solicita tu diagnóstico" -->
+				<h3 class="seo-cta-secondary">
+				<a href="#" id="openSeoAudit" aria-controls="seoAuditModal" aria-expanded="false">
+					¿Prefieres un análisis rápido? <br><strong>Obtén la auditoría de tu sitio web en segundos</strong>
+				</a>
+				</h3>
+			</div>
+	</section>
+	<section class={containerClases}>
+		<div class={contentClases + 'flex flex-col items-end'}>
+			
+				<Image src={firstImg} alt="esquema que representa conexión" width={697} />
+				<div class="p-[65px] md:mt-8 inline-flex flex-col justify-start max-h-[490px] ml-[-180px] bg-white gap-[30px] first-sec-cont-text white-box-mobile">
+					<h2 class={titleStyles}>
+						Somos la única empresa de Marketing y RRPP en  México  dedicada 100% al B2B desde nuestros inicios.
+					</h2>
+					<p class="text-grayTpm">
+						Combinamos capacidades estratégicas de nivel global con la capacidad de respuesta de una agencia boutique. Nuestro equipo de más de 20 profesionales proporciona acceso directo a estrategas senior, manteniendo al mismo tiempo la agilidad para adaptarnos rápidamente a las necesidades del cliente y a los cambios del mercado.
+						<br> <br>
+						Para ofrecer nuestro servicio Pan Regional contamos con representantes en <strong>Colombia</strong>, <strong>Argentina</strong>, <strong>Chile</strong> y <strong>Brasil</strong>.
+
+					</p>
+				</div>
+
+		</div>
+	</section>
+	<section class={containerClases + ' '}>
+		<div class={contentClasesCol + " "}>
+			<div class="w-full flex lg:flex-row gap-[20px] md:flex-col ">
+				<div class="flex-col items-start w-full max-w-[500px]">
+					<h3 class={subtitleStyles + " text-redTpm "}>NUESTRO ENFOQUE</h3>
+					<h2 class={titleStyles + ' mb-[30px]'}>
+						Experiencia en el Complejo Recorrido B2B
+					</h2>
+					<p class="block text-grayTpm text-(length:--normal-text-size) font-regular">
+						Tenemos experiencia trabajando con una variedad de sectores y  empresas, desde startups y jugadores del mercado medio hasta Unicornios de mercados emergentes, y empresas locales e internacionales.
+					</p>
+	
+				</div>
+				<div class="w-full flex flex-col justify-end mb-[15px] ">
+					<Image src={linea} alt="línea punteada" class="linea-punteada" />
+					<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' cta-button self-start'}>Quiero agendar una llamada</a>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section class={containerClases}>
+		<div class={contentClases + " flex flex-col  gap-[50px]"}>
+			<div class="flex flex-col gap-[30px]">
+				<Image src={profundoEntendimientoImg} alt="profundo entendimiento de la dinámica b2b" class="w-full"/>
+				<p class="text-grayTpm text-(length:--normal-text-size)">
+					Comprendemos los matices de los largos ciclos de consideración y los procesos de decisión con múltiples partes interesadas.  Sabemos la importancia de construir, mantener y proteger la reputación de nuestros clientes.
+				</p>
+			</div>
+			<div class="flex flex-col gap-[30px]">
+				<Image src={relacionesPublicas} alt="relaciones publicas digitales y gestion de reputacion" class="w-full"/>
+				<p class="text-grayTpm text-(length:--normal-text-size)">
+					Nuestro enfoque combina el desarrollo de liderazgo de opinión con comunicaciones estratégicas para construir autoridad en el mercado y acelerar el desarrollo de negocios. <strong>Mitigación y gestión de crisis reputacionales off y online.</strong>
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class={containerClases}>
+		<div class={contentClasesCol + ' flex flex-col lg:flex lg:flex-col gap-[50px]'}>
+			<div class=" w-full grid grid-cols-1 lg:grid-cols-2 justify-center gap-[50px] items-center md:grid-cols-2">
+				<div class="flex flex-col">
+					<h3 class={titleStyles + "text-left lg:text-right"}>
+						Vinculación Institucional <br>
+						y  posicionamiento de Voceros 
+					</h3>
+					<p class="text-grayTpm text-(length:--normal-text-size) text-left lg:text-right mt-4">
+						Mantenemos relaciones establecidas con medios de comunicación, cámaras de la industria, asociaciones profesionales y ONGs .
+					</p>
+				</div>
+				<Image src={manInConferency} alt="hombre en una conferencia" class="w-[360px]" />
+
+			</div>
+
+			<div class=" w-full grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 justify-center gap-[50px] items-center">
+				<div class="flex justify-end">
+					<Image src={computadora} alt="hombre en una conferencia" class="w-[360px]" />
+
+				</div>
+				<div class="flex flex-col">
+					<h3 class={titleStyles + " text-left"}>
+						Metodología Basada en Data 
+						y Orientación a Resultados
+					</h3>
+					<p class="text-grayTpm text-(length:--normal-text-size) text-left mt-4">
+						Invertimos en las herramientas clave de marketing y RRPP para que nuestros clientes no tengan qué hacerlo. Estrategia, implementación y medición en tiempo real están al centro de nuestra relación con clientes
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+	<section class={containerClases +" bg-lightGreen"}>
+		<div class={contentClasesCol + ' '}>
+			<div class="w-full flex flex-col gap-5">
+				<h2 class={subtitleStyles + ' text-greenTpm'}>
+					CAPACIDADES DE SERVICIO
+
+				</h2>
+				<h3 class={titleStyles}>
+					Relaciones públicas y <br>
+					comunicaciones estratégicas
+				</h3>
+				<div class="rp-y-ce grid lg:grid-cols-3 lg:grid-rows-2 gap-8 grid-cols-1">
+					{
+						greenSectionCards.map((e)=> <GreenSecCard title={e.title} listElements={e.listElements} iconURL={e.icon} /> )
+					}
+				</div>
+			</div>
+			<div class="eventos-corporativos flex flex-col gap-12">
+				<h2 class={titleStyles + " text-left mt-20 "}>Eventos corporativos y <br> relaciones internacionales</h2>
+				<div class=" accordion flex flex-col">
+					<div class="accordion-menu self-center justify-between rounded-t-2xl bg-white flex w-full pt-3 lg:px-7 lg:max-w-[900px] px-3 gap-2">
+						<button class="menu-option pt-2 px-2 active" data-tab="stakeholders">Stakeholders</button>
+						<button class="menu-option pt-2 px-2" data-tab="eventos">Eventos Ejecutivos</button>
+						<button class="menu-option pt-2 px-2" data-tab="gestion">Gestión de Eventos</button>
+					</div>
+					<div class="accordion-body rounded-4xl lg:py-[50px] lg:pl-[70px] lg:pr-[43px] p-7 gap-5 flex flex-col-reverse lg:flex-row lg:justify-between lg:gap-[40px] md:flex-col active " data-content="stakeholders">
+						<div class="flex flex-col justify-center gap-7 ">
+							<h3 class="text-white text-(length:--box-title-size) font-bold ">Eventos de Participación de Grupos <br> de Interés (Stakeholders)</h3>
+							<ul class="text-white list-disc pl-9 text-(length:--box-text-size)">
+								
+								<li>
+									Reuniones del consejo asesor de clientes
+
+								</li>
+								<li>
+									Organización de cumbres de socios.
+
+								</li>
+								<li>
+									Conferencias para proveedores.
+
+								</li>
+								<li>
+									Programas de alcance comunitario.
+
+								</li>
+								<li>
+									Eventos de responsabilidad social corporativa.
+
+								</li>
+
+							</ul>
+
+							<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' self-start'}>Quiero agendar una llamada</a>
+						</div>
+						<div class="accorion-img-container">
+							<Image src={conferenceSpeaker} alt="hombre hablando en conferencia" class="lg:max-w-[502px] lg:max-h-[342px]" />
+
+						</div>
+					</div>
+
+					<div class="accordion-body rounded-4xl lg:py-[50px] lg:pl-[70px] lg:pr-[43px] p-7 gap-5 flex flex-col-reverse md:flex-col lg:flex-row lg:justify-between lg:gap-[40px] hidden" data-content="eventos">
+						<div class="flex flex-col justify-center gap-7 ">
+							<h3 class="text-white text-(length:--box-title-size) font-bold ">Eventos Ejecutivos y <br> de Liderazgo</h3>
+							<ul class="text-white list-disc pl-5 text-(length:--box-text-size)">
+								
+								<li>
+									Mesas redondas y foros ejecutivos para C-suite.
+								</li>
+								<li>
+									Facilitación y apoyo en presentaciones para reuniones de directorio.
+
+								</li>
+								<li>
+									Eventos y presentaciones de relaciones con inversores.
+
+								</li>
+								<li>
+									Retiros y talleres de planificación estratégica.
+
+								</li>
+								<li>
+									Programas de desarrollo de liderazgo.
+								</li>
+
+							</ul>
+
+							<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' self-start'}>Quiero agendar una llamada</a>
+						</div>
+						<div class="accorion-img-container">
+							<Image src={juntaDeNegocios} alt="hombre hablando en conferencia" class="lg:max-w-[502px] lg:max-h-[342px]" />
+
+						</div>
+					</div>
+					<div class="accordion-body rounded-4xl lg:py-[50px] lg:pl-[70px] lg:pr-[43px] p-7 gap-5 flex flex-col-reverse md:flex-col lg:flex-row lg:justify-between lg:gap-[40px] hidden " data-content="gestion">
+						<div class="flex flex-col justify-center gap-7 ">
+							<h3 class="text-white text-(length:--box-title-size) font-bold ">Gestión de Eventos <br> Híbridos y Virtuales</h3>
+							<ul class="text-white list-disc pl-5 text-(length:--box-text-size)">
+								
+								<li>
+									Gestión de plataformas para conferencias virtuales.
+								</li>
+								<li>
+									Coordinación de tecnología para eventos híbridos.
+
+								</li>
+								<li>
+									Servicios de transmisión en vivo y broadcast.
+
+								</li>
+								<li>
+									Desarrollo de series de webinars interactivos.
+
+								</li>
+								<li>
+									Facilitación de networking online.
+
+								</li>
+
+							</ul>
+
+							<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' self-start'}>Quiero agendar una llamada</a>
+						</div>
+						<div class="accorion-img-container">
+							<Image src={setDeGrabacion} alt="hombre hablando en conferencia" class="lg:max-w-[502px] lg:max-h-[342px]" />
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class={containerClases}>
+		<div class={contentClases + ' grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 lg:gap-5 gap-10 md:grid-cols-2'}>
+			{
+				pinkSectionCards.map((e)=>{
+					return(
+						<div class="card flex flex-col gap-10">
+							<div class="flex items-center gap-3">
+								<Image src={e.icon} alt="icon" />
+								<h3 class={smallTitle} set:html={e.title.replace(/\n/g, '<br>') }></h3>
+							</div>
+							<ul class="list-disc pl-5 flex flex-col gap-3">
+								{
+									e.listElements.map((el)=> <li class="text-(length:--box-text-size) text-grayTpm" set:html={el.replace(/\n/g, '<br>')}></li> )
+								}
+							</ul>
+						</div>
+
+					)
+				})
+			}
+		</div>
+	</section>
+	<section class={containerClases +''}>
+		<div class={contentClasesCol + ' gap-10'} >
+			<div class="titles-container">
+
+				<h2 class={subtitleStyles + ' text-redTpm'} >ENFOQUE DE LA INDUSTRIA</h2>
+				<h3 class={titleStyles} >Sectores Principales</h3>
+			</div>
+			<div class="flex flex-col lg:flex-row lg:max-w-[1060px] mt-10 lg:self-end gap-10">
+				<div class="services-container flex flex-col gap-7">
+					{
+						sectorsList.map((sector)=>{
+							return(
+								<div class="flex gap-[15px]">
+									<Image src={sector.icon} alt="icon" width={50}/>
+									<h4 class={ "text-(length:--normal-text-size) font-bold text-blackTpm"} set:html={sector.sector}></h4>
+								</div>
+
+							)
+						})
+					}
+				</div>
+				<Image src={manos} alt="manos sosteniendo iconos" class="w-full max-w-[545px] " />
+			</div>
+		</div>
+	</section>
+	<section class={containerClases + ' bg-lightGreen'}>
+		<div class={contentClasesCol}>
+			<h2 class={titleStyles + ' text-center'}>Especialización B2B</h2>
+			<p class="text-grayTpm text-(length:--normal-text-size) text-center mt-5 mb-7">
+				Nuestra práctica se especializa en organizaciones con:
+			</p>
+			<div class="cards-conta flex flex-col gap-7 lg:grid lg:grid-cols-3 lg:max-w-[1136px] lg:gap-5 lg:mt-7">
+				<div class="flex flex-col rounded-xl bg-white">
+					<Image class="w-full" src={holograma} alt="holograma" />
+					<h3 class={smallTitle + ' p-5'} >Ciclos de venta extendidos que requieren múltiples puntos de contacto.</h3>
+				</div>
+				<div class="flex flex-col rounded-xl bg-white">
+					<Image class="w-full" src={reunion} alt="holograma" />
+					<h3 class={smallTitle + ' p-5'} >Segmentos de clientes PyME y empresariales.</h3>
+				</div>
+				<div class="flex flex-col rounded-xl bg-white">
+					<Image class="w-full" src={mapa} alt="holograma" />
+					<h3 class={smallTitle + ' p-5'} >Requisitos de credibilidad institucional y posicionamiento en el mercado.</h3>
+				</div>
+			</div>
+			<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" style="align-self:center;" class={buttonClases + ' mt-12 md:max-w-[260px] lg:max-w-[340px]'}>Quiero agendar una llamada</a>
+		</div>
+	</section>
+
+
+		<footer id="site-footer" class="w-full bg-blackTpm flex lg:justify-center py-12 px-5 lg:px-0 md:justify-center md:py-8">
+	<div class="footer-inner own-footer-inner flex lg:w-full lg:max-w-[1200px] flex-col gap-10 md:gap-5 md:w-full">
+		<div class="footer-row-1">
+			<div class="site-branding show-{logoType}">
+				<img src="https://tecnologiaynegocios.net/wp-content/uploads/2025/09/Logotipo-TPM-Marketing-PR_Negativo-1.png" alt="Logo de TPM" class="footer-logo" />
+			</div>
+		</div>
+		<div class="footer-row-2 flex lg:flex-row lg:justify-center">
+			<div class="fr2c flex flex-col lg:flex-row gap-5 justify-between items-center bg-blackTpm brightness-150 p-10 py-14 w-full max-w-[1200px]">
+				<div class="fr2c-text">
+					<h2 class="fr2c-cta text-[25px] font-bold  text-white lg:text-[30px]">Suscríbete a nuestro newsletter <br>para recibir las últimas noticias.</h2>
+				</div>
+				<form class="fr2c-form w-full flex" id="blog-newsletter-form" name="blog-newsletter-form">
+					<input class="fr2c-form-input w-full placeholder:text-white p-5" id="email" type="email" placeholder="Ingresa tu correo electrónico" />
+					<input class="fr2c-form-submit w-full h-[50px]" type="submit" value="Suscribirme	">
+				</form>
+			</div>
+		</div>
+
+		<div class="footer-row-1">
+			<div class="agency-address">
+				<span class="address text-white">
+					<span>Zamora 33, Condesa, Ciudad de México, CP 06140</span> <br>
+					<span>506 S Spring St #13308 SMB #11953, Los Angeles, CA 90013</span>
+				</span>
+			</div>
+			
+		</div>
+
+	</div>
+</footer>
+	
+	<script>
+    const menuButtons = document.querySelectorAll('.menu-option');
+    const contentBodies = document.querySelectorAll('.accordion-body');
+
+    menuButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            const currentActiveContent = document.querySelector('.accordion-body.active');
+            const targetContent = document.querySelector(`[data-content="${targetTab}"]`);
+
+            if (currentActiveContent && currentActiveContent !== targetContent) {
+                currentActiveContent.classList.remove('active');
+                currentActiveContent.classList.add('out');
+				setTimeout(()=>{
+					currentActiveContent.classList.remove('out')
+					currentActiveContent.classList.add('hidden');
+				}, 1000)
+            }
+
+            // Eliminar la clase 'active' de todos los botones
+            menuButtons.forEach(btn => btn.classList.remove('active'));
+            // Añadir la clase 'active' al botón clickeado
+            button.classList.add('active');
+
+            if (targetContent && !targetContent.classList.contains('active')) {
+                // Si el contenido ya está activo, no hagas nada
+                // Si no, quita la clase 'hidden' y añade 'active' para animar
+                setTimeout(() => {
+					targetContent.classList.remove('hidden');
+                    targetContent.classList.add('active');
+                }, 1001); // Pequeño retraso para asegurar que la clase 'hidden' se aplique antes
+            }
+        });
+    });
+</script>
+</LayoutGeneral>
+   
+    
+ 

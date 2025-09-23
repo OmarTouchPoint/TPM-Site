@@ -1,0 +1,44 @@
+---
+const {title} = Astro.props;
+
+---
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+    <!-- Google Tag Manager -->
+    <script is:inline>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M7K5TJK');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- HeatMap --> 
+    <script is:inline>
+        (function(h,e,a,t,m,p) {
+        m=e.createElement(a);m.async=!0;m.src=t;
+        p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
+        })(window,document,'script','https://u.heatmap.it/log.js');
+    </script>
+    <!-- End HeatMap -->
+    <!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSYTZRF272"></script>
+	<script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-SSYTZRF272');
+    </script>
+    <!-- End Google Tag (gtag.js) -->
+    <!-- Start CrazyEgg -->
+    <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0093/2248.js" async="async" is:inline></script>
+    <!-- End CrazyEgg -->
+     <title>{title}</title>
+     <link rel="shortcut icon" href="/touchpoint-marketing-funnel-color.png" type="image/x-icon">
+     <slot/>
+</head>

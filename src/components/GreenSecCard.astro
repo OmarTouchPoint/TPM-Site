@@ -1,0 +1,30 @@
+---
+import Image from "astro/components/Image.astro";
+import {type ImageMetadata } from "astro";
+interface Props {
+    listElements : string[];
+    title: string;
+    iconURL: any;
+}
+const {listElements, title, iconURL} = Astro.props;
+
+
+---
+
+<div class="flex flex-col p-7 rounded-lg bg-white gap-5">
+
+    <Image src={iconURL} width={50} alt=" icon"/>
+    <h4 class="text-(length:--box-title-size) font-bold text-blackTpm text-left" set:html={title.replace(/\n/g, '<br>')}>
+      
+    </h4>
+    <ul class="list-disc pl-5 flex flex-col gap-3">
+
+        {
+            listElements.map((e)=>{
+                return(
+                    <li class="text-(length:--box-text-size) text-grayTpm" set:html={e.replace(/\n/g, '<br>')}></li>
+                )
+            })
+        }
+    </ul>
+</div>

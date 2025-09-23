@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap');
+@import "tailwindcss";
+@theme{
+    --color-blackTpm:#01232F;
+    --color-grayTpm:#4c4c4c;
+    --color-redTpm:#DF1449;
+    --color-greenTpm:#007D8C;
+    --color-lightGreen:#E5F5F5;
+    --color-brightGreen:#00BCAB;
+    --sec-title-size:25px;
+    --sec-title-size-mobile:20px;
+    --sec-subtitle-size:16px;
+    --normal-text-size:17px;
+    --box-title-size:22px;
+    --box-text-size:17px;
+    --box-small-text-size:13px;
+    --btn-font-size:18px;
+
+}
+
+html, body{
+
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Encode Sans", serif;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p, li, span {
+    font-family: "Encode Sans", sans-serif;
+}
+.mw-1200{
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+

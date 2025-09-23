@@ -1,0 +1,17 @@
+---
+import Head from "../components/Head.astro"
+import PopupAuditoria from "../components/PopupAuditoria.astro"
+---
+<html lang="es">
+    <Head title="TouchPoint Marketing | Marketing Digital, Inbound Marketing, Relaciones Públicas" />
+    <body>
+
+        <slot/>
+         <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7K5TJK"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+         <PopupAuditoria/>
+         <script src="/scripts/header.js" is:inline></script>
+    </body>
+</html>
