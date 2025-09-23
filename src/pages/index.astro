@@ -289,7 +289,7 @@ const greenSectionCards = [
 				</div>
 				<div class="w-full flex flex-col justify-end mb-[15px] ">
 					<Image src={linea} alt="línea punteada" class="linea-punteada" />
-					<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' cta-button self-start'}>Quiero agendar una llamada</a>
+					<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' cta-button lg:self-end md:self-start'}>Quiero agendar una llamada</a>
 				</div>
 
 			</div>
@@ -566,7 +566,7 @@ const greenSectionCards = [
 					<h2 class="fr2c-cta text-[25px] font-bold  text-white lg:text-[30px]">Suscríbete a nuestro newsletter <br>para recibir las últimas noticias.</h2>
 				</div>
 				<form class="fr2c-form w-full flex" id="blog-newsletter-form" name="blog-newsletter-form">
-					<input class="fr2c-form-input w-full placeholder:text-white p-5" id="email" type="email" placeholder="Ingresa tu correo electrónico" />
+					<input class="fr2c-form-input w-full placeholder:text-white p-5 h-[50px]" id="email" type="email" placeholder="Ingresa tu correo electrónico" />
 					<input class="fr2c-form-submit w-full h-[50px]" type="submit" value="Suscribirme	">
 				</form>
 			</div>
@@ -585,41 +585,8 @@ const greenSectionCards = [
 	</div>
 </footer>
 	
-	<script>
-    const menuButtons = document.querySelectorAll('.menu-option');
-    const contentBodies = document.querySelectorAll('.accordion-body');
-
-    menuButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetTab = button.getAttribute('data-tab');
-            const currentActiveContent = document.querySelector('.accordion-body.active');
-            const targetContent = document.querySelector(`[data-content="${targetTab}"]`);
-
-            if (currentActiveContent && currentActiveContent !== targetContent) {
-                currentActiveContent.classList.remove('active');
-                currentActiveContent.classList.add('out');
-				setTimeout(()=>{
-					currentActiveContent.classList.remove('out')
-					currentActiveContent.classList.add('hidden');
-				}, 1000)
-            }
-
-            // Eliminar la clase 'active' de todos los botones
-            menuButtons.forEach(btn => btn.classList.remove('active'));
-            // Añadir la clase 'active' al botón clickeado
-            button.classList.add('active');
-
-            if (targetContent && !targetContent.classList.contains('active')) {
-                // Si el contenido ya está activo, no hagas nada
-                // Si no, quita la clase 'hidden' y añade 'active' para animar
-                setTimeout(() => {
-					targetContent.classList.remove('hidden');
-                    targetContent.classList.add('active');
-                }, 1001); // Pequeño retraso para asegurar que la clase 'hidden' se aplique antes
-            }
-        });
-    });
-</script>
+	<script src="/scripts/accordion.js" is:inline>
+    </script>
 </LayoutGeneral>
    
     
