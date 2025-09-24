@@ -13,7 +13,7 @@ const menuButtons = document.querySelectorAll('.menu-option');
 				setTimeout(()=>{
 					currentActiveContent.classList.remove('out')
 					currentActiveContent.classList.add('hidden');
-				}, 1000)
+				}, 500)
             }
 
             // Eliminar la clase 'active' de todos los botones
@@ -27,7 +27,7 @@ const menuButtons = document.querySelectorAll('.menu-option');
                 setTimeout(() => {
 					targetContent.classList.remove('hidden');
                     targetContent.classList.add('active');
-                }, 1001); // Pequeño retraso para asegurar que la clase 'hidden' se aplique antes
+                }, 501); // Pequeño retraso para asegurar que la clase 'hidden' se aplique antes
             }
         });
     });

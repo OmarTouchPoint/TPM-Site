@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Encode+Sans:wght@100..900&display=swap');
 @import "tailwindcss";
 @theme{
     --color-blackTpm:#01232F;
@@ -17,7 +17,9 @@
     --btn-font-size:18px;
 
 }
-
+.condensed{
+    font-family: "Encode Sans Condensed", sans-serif;
+}
 html, body{
 
     font-optical-sizing: auto;

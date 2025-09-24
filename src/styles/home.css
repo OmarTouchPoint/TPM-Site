@@ -199,11 +199,11 @@ button:hover{
     }
 }
 .accordion-body.out {
-    animation: out-key 1s ;
+    animation: out-key 0.5s ;
 }
 .accordion-body.active {
   max-height: 1000px; /* Un valor lo suficientemente grande para todo tu contenido */
- animation: in-key 1s;
+ animation: in-key 0.5s;
 }
 
 .fr2c-form{
