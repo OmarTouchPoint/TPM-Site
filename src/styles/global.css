@@ -32,6 +32,9 @@ html, body{
 html, body, h1, h2, h3, h4, h5, h6, p, li, span {
     font-family: "Encode Sans", sans-serif;
 }
+button{
+    box-sizing: border-box;
+}
 .mw-1200{
     width: 100%;
     max-width: 1200px;

@@ -144,7 +144,7 @@ button:hover a,
 }
 button:hover{
     background-color: transparent;
-    border: solid 2px;
+    
     color: #ffff;
 }
 .contacto-nav:hover{
@@ -162,13 +162,13 @@ button:hover{
 .menu-option{
     margin: 0px;
     filter: opacity(0.5);
+    border-bottom: 5px solid white;    
      
 }
 .menu-option:hover, .menu-option.active{
     color:var(--color-blackTpm);
-    border:none;
-    border-bottom: 5px solid var(--color-brightGreen);
     filter: opacity(1);
+    border-bottom-color: var(--color-brightGreen);
     transition: all 1.5 ease-in-out;
 }
 .accordion-body {
