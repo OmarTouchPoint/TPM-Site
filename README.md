@@ -1,43 +1,22 @@
-# Astro Starter Kit: Minimal
+# Guía de uso para este proyecto
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## Instalación de proyecto en entorno de desarrollo:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Se necesita tener instalado nodejs, la versión más reciente o a partir de la 22.14.0 y git con el acceso ssh para subir cambios locales a la nube.
+Una vez instalado el proyecto con git clone se debe realizar la instalación de los paquetes necesarios, para esto se abre la terminal, se avanza a la carpeta raiz (en la que se puede acceder o listar el archivo package.json) y se ejecuta el comando  _npm install_  en la consola.
 
-## 🚀 Project Structure
+## Levantar modo de desarrollo
 
-Inside of your Astro project, you'll see the following folders and files:
+Para levantar el modo de desarrollo se ejecuta el comando _npm run dev_ .
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Construcción del sitio
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Para generar la versión de producción del sitio se debe ejecutar el comando npm run build, esto generará la carpeta _dist_ la cual consta de archivos estáticos que pueden ser subidos a cualquier servidor
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Vista previa de build
 
-Any static assets, like images, can be placed in the `public/` directory.
+Para ver correctamente laversion de producción de la carpeta _dist_ NO se abra directamente en ele navegador el index del proyecto, baste con ejecutar el comando _npm run preview_ lo cual levantará  un servidor local para ver el proyecto
 
-## 🧞 Commands
+### ¿Por qué no abrir el index directamente?
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+No pasará nada, se mostrará el html, pero cargará sin estilos, ya que estos se generan en un archivo optimizado vinculado directamente con rutas relativas, las cuales no funcionaran si se abre en el navegador directamente ya que este abre el path del sistema como url. 
