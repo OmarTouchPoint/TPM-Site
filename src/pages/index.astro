@@ -50,7 +50,7 @@ const contentClases= "mw-1200 mx-[20px] px-[15px] lg:grid lg:grid-cols-2 lg:mx-0
 const contentClasesCol ="mw-1200 mx-[20px] px-[15px] lg:flex lg:flex-col lg:mx-0 lg:px-0 ";
 const titleStyles = "font-bold lg:text-(length:--sec-title-size) text-(length:--sec-title-size-mobile) text-blackTpm"
 const subtitleStyles ="font-medium text-(length:--sec-subtitle-size) uppercase tracking-[3px]"
-const smallTitle = "font-bold lg:text-(length:--box-title-size) text-(length:--sec-title-size-mobile) text-blackTpm"
+const smallTitle = "font-bold lg:text-(length:--box-title-size) text-blackTpm"
 const smallText = "text-(length:--box-text-size) font-regular"
 
 const sectorsList = [
@@ -276,7 +276,7 @@ const greenSectionCards = [
 	</section>
 	<section class={containerClases + ' '}>
 		<div class={contentClasesCol + " "}>
-			<div class="w-full flex lg:flex-row gap-[20px] md:flex-col ">
+			<div class="w-full flex flex-col lg:flex-row gap-[20px] md:flex-col ">
 				<div class="flex-col items-start w-full max-w-[500px]">
 					<h3 class={subtitleStyles + " text-redTpm "}>NUESTRO ENFOQUE</h3>
 					<h2 class={titleStyles + ' mb-[30px]'}>
@@ -376,8 +376,8 @@ const greenSectionCards = [
 					</div>
 					<div class="accordion-body rounded-4xl lg:py-[50px] lg:pl-[70px] lg:pr-[43px] p-7 gap-5 flex flex-col-reverse lg:flex-row lg:justify-between lg:gap-[40px] md:flex-col active " data-content="stakeholders">
 						<div class="flex flex-col justify-center gap-7 ">
-							<h3 class="text-white text-(length:--box-title-size) font-bold ">Eventos de Participación de Grupos <br> de Interés (Stakeholders)</h3>
-							<ul class="text-white list-disc pl-9 text-(length:--box-text-size)">
+							<h3 class="text-white text-[18px] lg:text-(length:--box-title-size) md:text-(length:--box-title-size) font-bold ">Eventos de Participación de Grupos <br> de Interés (Stakeholders)</h3>
+							<ul class="text-white list-disc pl-9 text-[15px] md:text-(length:--box-text-size) lg:text-(length:--box-text-size)">
 								
 								<li>
 									Reuniones del consejo asesor de clientes
@@ -402,7 +402,7 @@ const greenSectionCards = [
 
 							</ul>
 
-							<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' self-start'}>Quiero agendar una llamada</a>
+							<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' self-start text-center'}>Quiero agendar una llamada</a>
 						</div>
 						<div class="accorion-img-container">
 							<Image src={conferenceSpeaker} alt="hombre hablando en conferencia" class="lg:max-w-[502px] lg:max-h-[342px]" />
@@ -412,8 +412,8 @@ const greenSectionCards = [
 
 					<div class="accordion-body rounded-4xl lg:py-[50px] lg:pl-[70px] lg:pr-[43px] p-7 gap-5 flex flex-col-reverse md:flex-col lg:flex-row lg:justify-between lg:gap-[40px] hidden" data-content="eventos">
 						<div class="flex flex-col justify-center gap-7 ">
-							<h3 class="text-white text-(length:--box-title-size) font-bold ">Eventos Ejecutivos y <br> de Liderazgo</h3>
-							<ul class="text-white list-disc pl-5 text-(length:--box-text-size)">
+							<h3 class="text-white text-[18px] lg:text-(length:--box-title-size) md:text-(length:--box-title-size) font-bold ">Eventos Ejecutivos y <br> de Liderazgo</h3>
+							<ul class="text-white list-disc pl-5 text-[15px] md:text-(length:--box-text-size) lg:text-(length:--box-text-size)">
 								
 								<li>
 									Mesas redondas y foros ejecutivos para C-suite.
@@ -436,7 +436,7 @@ const greenSectionCards = [
 
 							</ul>
 
-							<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' self-start'}>Quiero agendar una llamada</a>
+							<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' self-start text-center'}>Quiero agendar una llamada</a>
 						</div>
 						<div class="accorion-img-container">
 							<Image src={juntaDeNegocios} alt="hombre hablando en conferencia" class="lg:max-w-[502px] lg:max-h-[342px]" />
@@ -445,8 +445,8 @@ const greenSectionCards = [
 					</div>
 					<div class="accordion-body rounded-4xl lg:py-[50px] lg:pl-[70px] lg:pr-[43px] p-7 gap-5 flex flex-col-reverse md:flex-col lg:flex-row lg:justify-between lg:gap-[40px] hidden " data-content="gestion">
 						<div class="flex flex-col justify-center gap-7 ">
-							<h3 class="text-white text-(length:--box-title-size) font-bold ">Gestión de Eventos <br> Híbridos y Virtuales</h3>
-							<ul class="text-white list-disc pl-5 text-(length:--box-text-size)">
+							<h3 class="text-white text-[18px] lg:text-(length:--box-title-size) md:text-(length:--box-title-size) font-bold ">Gestión de Eventos <br> Híbridos y Virtuales</h3>
+							<ul class="text-white list-disc pl-5 text-[15px] md:text-(length:--box-text-size) lg:text-(length:--box-text-size)">
 								
 								<li>
 									Gestión de plataformas para conferencias virtuales.
@@ -470,7 +470,7 @@ const greenSectionCards = [
 
 							</ul>
 
-							<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' self-start'}>Quiero agendar una llamada</a>
+							<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" class={buttonClases + ' self-start text-center'}>Quiero agendar una llamada</a>
 						</div>
 						<div class="accorion-img-container">
 							<Image src={setDeGrabacion} alt="hombre hablando en conferencia" class="lg:max-w-[502px] lg:max-h-[342px]" />
@@ -489,7 +489,7 @@ const greenSectionCards = [
 						<div class="card flex flex-col gap-10">
 							<div class="flex items-center gap-3">
 								<Image src={e.icon} alt="icon" />
-								<h3 class={smallTitle} set:html={e.title.replace(/\n/g, '<br>') }></h3>
+								<h3 class={smallTitle + 'text-[17px]' } set:html={e.title.replace(/\n/g, '<br>') }></h3>
 							</div>
 							<ul class="list-disc pl-5 flex flex-col gap-3">
 								{
@@ -517,7 +517,7 @@ const greenSectionCards = [
 							return(
 								<div class="flex gap-[15px]">
 									<Image src={sector.icon} alt="icon" width={50}/>
-									<h4 class={ "text-(length:--normal-text-size) font-bold text-blackTpm"} set:html={sector.sector}></h4>
+									<h4 class={ "text-[14px] md:text-[20px] font-bold text-blackTpm"} set:html={sector.sector}></h4>
 								</div>
 
 							)
@@ -548,7 +548,7 @@ const greenSectionCards = [
 					<h3 class={smallTitle + ' p-5'} >Requisitos de credibilidad institucional y posicionamiento en el mercado.</h3>
 				</div>
 			</div>
-			<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" style="align-self:center;" class={buttonClases + ' mt-12 md:max-w-[260px] lg:max-w-[340px]'}>Quiero agendar una llamada</a>
+			<a href="https://materiales.touchpointmarketing.mx/diagnostico-marketing-y-rp-b2b?utm_source=website&utm_medium=home&utm_campaign=relanzamiento_tpm&utm_term=sesion_diagnostico&utm_content=button" style="align-self:center;" class={buttonClases + ' mt-12 md:max-w-[260px] lg:max-w-[340px] text-center'}>Quiero agendar una llamada</a>
 		</div>
 	</section>
 
