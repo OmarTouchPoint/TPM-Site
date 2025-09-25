@@ -1,22 +1,41 @@
-# Guía de uso para este proyecto
+# Guía de uso de este proyecto
 
-## Instalación de proyecto en entorno de desarrollo:
+---
 
-Se necesita tener instalado nodejs, la versión más reciente o a partir de la 22.14.0 y git con el acceso ssh para subir cambios locales a la nube.
-Una vez instalado el proyecto con git clone se debe realizar la instalación de los paquetes necesarios, para esto se abre la terminal, se avanza a la carpeta raiz (en la que se puede acceder o listar el archivo package.json) y se ejecuta el comando  _npm install_  en la consola.
+## 1. Instalación en entorno de desarrollo
 
-## Levantar modo de desarrollo
+Para empezar, asegúrate de tener instalados **Node.js** (versión 22.14.0 o superior) y **Git** con acceso SSH.
 
-Para levantar el modo de desarrollo se ejecuta el comando _npm run dev_ .
+Una vez que hayas clonado el repositorio, ve a la carpeta principal del proyecto (donde se encuentra el archivo `package.json`) y ejecuta el siguiente comando en tu terminal para instalar todas las dependencias:
 
-## Construcción del sitio
+`npm install`
 
-Para generar la versión de producción del sitio se debe ejecutar el comando npm run build, esto generará la carpeta _dist_ la cual consta de archivos estáticos que pueden ser subidos a cualquier servidor
+---
 
-## Vista previa de build
+## 2. Iniciar el modo de desarrollo
 
-Para ver correctamente laversion de producción de la carpeta _dist_ NO se abra directamente en ele navegador el index del proyecto, baste con ejecutar el comando _npm run preview_ lo cual levantará  un servidor local para ver el proyecto
+Para levantar un servidor de desarrollo y empezar a trabajar, simplemente ejecuta:
 
-### ¿Por qué no abrir el index directamente?
+`npm run dev`
 
-No pasará nada, se mostrará el html, pero cargará sin estilos, ya que estos se generan en un archivo optimizado vinculado directamente con rutas relativas, las cuales no funcionaran si se abre en el navegador directamente ya que este abre el path del sistema como url. 
+---
+
+## 3. Construcción del sitio para producción
+
+Cuando estés listo para generar la versión final del sitio, optimizada y lista para subir a un servidor, usa este comando:
+
+`npm run build`
+
+Esto creará una nueva carpeta llamada `dist` con todos los archivos estáticos necesarios.
+
+---
+
+## 4. Vista previa de la versión de producción
+
+**Importante:** Para ver la versión compilada del proyecto, **no abras el archivo `index.html` directamente en tu navegador**. En su lugar, usa este comando, que levantará un servidor local para la previsualización:
+
+`npm run preview`
+
+**¿Por qué no abrir el archivo directamente?**
+
+El sitio se vería sin estilos. Esto sucede porque los archivos CSS y otros recursos se enlazan con rutas relativas que solo funcionan correctamente cuando se cargan desde un servidor web.
